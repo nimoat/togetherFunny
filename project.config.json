@@ -1,8 +1,9 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "./dist/miniprogram",
+  "cloudfunctionRoot": "./dist/cloudfunction",
   "projectname": "myApp",
   "description": "一起玩小程序项目",
-  "appid": "touristappid",
+  "appid": "wxebef9cbbae56b5b9",
   "setting": {
     "urlCheck": true,
     "es6": false,
