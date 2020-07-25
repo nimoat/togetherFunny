@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Button } from '@tarojs/components'
+import { View, Button, Swiper, SwiperItem, Image } from '@tarojs/components'
 import './index.less'
 
 export default class Index extends Component {
@@ -97,6 +97,24 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
+        <Swiper
+          className='swiper-container'
+          indicatorColor='#999'
+          indicatorActiveColor='#333'
+          circular
+          indicatorDots
+          autoplay
+        >
+          {
+            [1, 2, 3, 4, 5].map((item: number) =>
+              (<SwiperItem key={item}>
+                <View>
+                  <Image className='image' src={`http://www.dmoe.cc/random.php?_t=${item}`} />
+                </View>
+              </SwiperItem>)
+            )
+          }
+        </Swiper>
         <Button className='btn-build-team' plain type='primary' onClick={this.handleBuildTeam}>获取openid</Button>
         <Button className='btn-join-team' type='primary' onClick={this.handleJoinTeam} openType='getUserInfo'>获取用户信息</Button>
         <Button className='btn-add-team' type='warn' onClick={this.handleAddTeam}>插入数据</Button>
